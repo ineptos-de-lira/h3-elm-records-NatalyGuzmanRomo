@@ -25,8 +25,8 @@ langs =
     ]
 
 
-languagesName : List { name : String, releaseYear : Int, currentVersion : String } -> List String
-languagesName list =
+languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
+languageNames list =
     List.map .name list
 
 
@@ -51,7 +51,7 @@ onlyStudents list =
                 "" :: onlyStudents xs
 
 
-type alias VideoGames =
+type alias Videogame =
     { title : String
     , releaseYear : Int
     , available : Bool
@@ -60,7 +60,7 @@ type alias VideoGames =
     }
 
 
-vg : List VideoGames
+vg : List Videogame
 vg =
     [ { title = "Roblox"
       , releaseYear = 2004

@@ -1,5 +1,8 @@
 module Helper exposing (..)
 
+import Html
+
+
 add2 : Int -> Int -> Int
 add2 int1 int2 =
     int1 + int2
@@ -13,6 +16,7 @@ add3 int1 int2 int3 =
 calc : Int -> Int -> (Int -> Int -> Int) -> Int
 calc int1 int2 operator =
     operator int1 int2
+
 
 langs : List { name : String, releaseYear : Int, currentVersion : String }
 langs =
@@ -46,6 +50,7 @@ onlyStudents list =
             else
                 "" :: onlyStudents xs
 
+
 type alias VideoGames =
     { title : String
     , releaseYear : Int
@@ -76,8 +81,6 @@ getVideogameGenres : List VideoGames -> List (List String)
 getVideogameGenres list =
     List.map .genres list
 
-import Html
-
 
 type alias Computer =
     { ram : String
@@ -87,19 +90,26 @@ type alias Computer =
     }
 
 
-myLaptop : List Computer
+myLaptop : Computer
 myLaptop =
-    [ { ram = "16"
-      , model = "Lenovo LOQ 15IRH8"
-      , brand = "Lenovo"
-      , screenSize = "15.6"
-      }
-    ]
+    { ram = "16"
+    , model = "Lenovo LOQ 15IRH8"
+    , brand = "Lenovo"
+    , screenSize = "15.6"
+    }
 
 
 main : Html.Html msg
 main =
     Html.div []
-        [ Html.h1 [] [ Html.text "My Laptop" ]
-        , Html.div [] [ Html.ul [] [ Html.li [] [ Html.text ("Ram: " ++ myLaptop.ram) ], Html.li [] [ Html.text ("Modelo: " ++ myLaptop.model) ], Html.li [] [ Html.text ("Marca: " ++ myLaptop.brand) ], Html.li [] [ Html.text ("Pulgadas: " ++ myLaptop.screenSize) ] ] ]
+        [ Html.h1 []
+            [ Html.text "My Laptop" ]
+        , Html.div []
+            [ Html.ul []
+                [ Html.li [] [ Html.text ("Ram: " ++ myLaptop.ram) ]
+                , Html.li [] [ Html.text ("Modelo: " ++ myLaptop.model) ]
+                , Html.li [] [ Html.text ("Marca: " ++ myLaptop.brand) ]
+                , Html.li [] [ Html.text ("Pulgadas: " ++ myLaptop.screenSize) ]
+                ]
+            ]
         ]

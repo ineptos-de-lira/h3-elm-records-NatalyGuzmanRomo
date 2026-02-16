@@ -83,26 +83,18 @@ getVideogameGenres list =
 
 
 type alias Computer =
-    { ram : String
-    , model : String
-    , brand : String
-    , screenSize : String
-    }
+    { ram : String, model : String, brand : String, screenSize : String }
 
 
 myLaptop : Computer
 myLaptop =
-    { ram = "16"
-    , model = "Lenovo LOQ 15IRH8"
-    , brand = "Lenovo"
-    , screenSize = "15.6"
-    }
+    { ram = "16GB", model = "Lenovo LOQ 15IRH8", brand = "Lenovo", screenSize = "15.6 inches" }
 
 
 main : Html.Html msg
 main =
     Html.div []
-        [ Html.h1 [] [ Html.text "My computer" ]
+        [ Html.h1 [] [ Html.text "My laptop" ]
         , Html.div []
             [ Html.ul []
                 [ Html.li [] [ Html.text ("Ram: " ++ myLaptop.ram) ]

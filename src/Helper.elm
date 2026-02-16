@@ -102,8 +102,7 @@ myLaptop =
 main : Html.Html msg
 main =
     Html.div []
-        [ Html.h1 []
-            [ Html.text "My Laptop" ]
+        [ Html.h1 [][ Html.text "My computer" ]
         , Html.div []
             [ Html.ul []
                 [ Html.li [] [ Html.text ("Ram: " ++ myLaptop.ram) ]

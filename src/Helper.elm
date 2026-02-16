@@ -51,7 +51,7 @@ onlyStudents list =
                 "" :: onlyStudents xs
 
 
-type alias VideoGames =
+type alias Videogame =
     { title : String
     , releaseYear : Int
     , available : Bool
@@ -60,7 +60,7 @@ type alias VideoGames =
     }
 
 
-vg : List VideoGames
+vg : List Videogame
 vg =
     [ { title = "Roblox"
       , releaseYear = 2004
@@ -77,7 +77,7 @@ vg =
     ]
 
 
-getVideogameGenres : List VideoGames -> List (List String)
+getVideogameGenres : List Videogame -> List (List String)
 getVideogameGenres list =
     List.map .genres list
 
